@@ -7,17 +7,17 @@ import os
 from gtts import gTTS
 import pygame
 from pygame import mixer
-## from threadpoolctl import threadpool_info
+
 
 def speak(audioString):
     global x
     b = audioString
     if len(b) == 0: # do nothing
-        #w1 = Label(root, text="No input!").pack()
+        
         return
     tts = gTTS(text=b, lang='en-us')
     tts.save("voice%s.mp3"%(x))
-    # x+=1
+    
     pygame.init()
     pygame.display.set_mode((2, 1))
     mixer.music.load("voice%s.mp3" % (x))
